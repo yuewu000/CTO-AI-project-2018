@@ -115,7 +115,7 @@ def build_model(layers):
     model.add(Linear(layers[1], layers[2]))
     return model
 
-#better to admitting variant epoch based on each case, here I use 800 for all items
+#better to admitting variant epoch based on each stock, here we use 300
 seq_len = 22
 fwd_len = 1
 #valid_ratio = 0.1
