@@ -55,10 +55,6 @@ print "The model is loaded successfully to the following model".format(trained_m
 
 # Make prediction (just show how to predict and deploy the predicted data, which is still a RDD)
 pred4 = trained_model.predict(train_rdd)
-print "*\n*\n*\n Let us see what we get grom the model:\n {} \n*\n*\n*\n*\n*\n totally {} elements".format(pred4.collect(), pred
-4.count())
-
-
-
-
+print "*\n*\n*\n Let us see what we get grom the model:\n {} \n*\n*\n*\n*\n*\n totally {} elements" \
+  .format(pred4.collect(), pred4.count())
 
