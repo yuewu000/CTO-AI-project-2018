@@ -78,6 +78,8 @@ X_train[13, :, 0].shape
 print "The shape of X_train and y_train are respectly {} and {}".format(X_train.shape, y_train.shape)
 print "The length of the min and max lists is {}".format(len(minList)) 
 
+# Define the functions to generate profit of percentage gain/loss
+***************************************************************************
 def gen_long_short_pos(model, x, h):
     if x is None or y is None or h <= 0:
         return []
@@ -109,7 +111,7 @@ def get_day_diff(x, y, h):
         day_diff.append(y_curr[-1] - x_curr[-1])
         prices.append(x_curr[-1])
     return prices, day_diff
-        
+"""        
 def cal_profit_dollar(pos, diffs, prices):
     if len(pos) != len(diffs):
         return 0
@@ -120,8 +122,8 @@ def cal_profit_dollar(pos, diffs, prices):
             cnt += 1
         prof.append(diffs[i]*pos[i])
     return 100*cnt/len(pos), prof
-    
-    #return sum(i[0] * i[1] for i in zip(pos, diffs))
+"""    
+   
 def cal_profit_percent(pos, diffs, prices):
     
     if len(pos) != len(diffs):
@@ -133,6 +135,7 @@ def cal_profit_percent(pos, diffs, prices):
             cnt += 1
         prof_perc.append(100*pos[i]*diffs[i]/prices[i])
     return 100*cnt/len(pos), prof_perc
+# ****************************************************************
 
 pos1 = gen_long_short_pos(model, X_train, y_train, 78)
 ps, diff1 = get_day_diff(X_train, y_train, 78)        
